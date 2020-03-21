@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* transform="translate(-10,-10) scale(1.05 */
+/* 
+svg {
+  border: 1px solid;
+} */
+
+/* svg path:hover {
+  transform: scale(1.05);
+  transform-origin: 50% 50%;
+  transition: all 1s;
+} */
+
+.App {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 275px;
+}
+
+.item {
+  font-size: 12px;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 14px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.label {
+  margin: 0 16px 0 0;
+}
