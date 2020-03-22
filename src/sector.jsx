@@ -10,6 +10,7 @@ function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
 }
 
 export default function({ 
+    id,
     cx,
     cy,
     radius,
@@ -44,6 +45,7 @@ export default function({
   
   return (
     <path
+        className={`path-${id}`}
         name={name}
         fill={fill}
         fillRule="evenodd"
