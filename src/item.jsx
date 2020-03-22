@@ -1,15 +1,18 @@
 import React from 'react';
 
 import { getColorForCategory } from './constants'
+import formatNumbe from './utils/formatNumber'
 
 const Item = ({
+  id,
   category,
-  sum
+  sum,
+  onClick
 }) => {
   return ( 
-    <span className="item" style={{ backgroundColor:  getColorForCategory[category] || '#d6d6d6'}}>
+    <span onMouseEnter={() => onClick({id,category})} onMouseLeave={() => onClick({id : '',category: ''})} className="item" style={{ backgroundColor:  getColorForCategory[category] || '#d6d6d6'}}>
       <span className="label">{category || "Прочее"}</span>
-      <span className="sum">{sum}</span>
+      <span className="sum">{formatNumbe(sum)}</span>
     </span>
    );
 }

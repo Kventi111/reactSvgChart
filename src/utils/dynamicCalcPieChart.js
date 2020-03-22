@@ -26,7 +26,7 @@ export function dynamicCalcPieChart(data,radius,maxSum) {
     // console.log({ percent });
     // console.log({ angleStep });
     // console.log({ value });
-    console.log({ circumFerenceCount });
+    // console.log({ circumFerenceCount });
     // console.log({ lastAngleStep })
     // console.log(circumFerence - lastAngleStep)
 

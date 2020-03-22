@@ -3,5 +3,5 @@ export const getColorForCategory = {
     'Коммунальные платежи': '#EEC0FF',
     'Налоги': '#FECCCC',
     'Мобильная связь': '#FEECD4',
-    'Кофе и рестораны': '#F1FED3'
+    'Кафе и рестораны': '#e3f3be'
 }

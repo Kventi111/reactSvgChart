@@ -4,8 +4,9 @@ import Pie from "./Pie";
 import { useCalcCommonSum } from "./customHooks/calcCommonSum";
 import { dynamicCalcPieChart } from "./utils/dynamicCalcPieChart";
 import { getColorForCategory } from './constants'
+import formatNumber from './utils/formatNumber'
 
-const CirclePieChart = ({ data, width, height, radius, thickness,text }) => {
+const CirclePieChart = ({ data, width, height, radius, thickness,text,activeCategory }) => {
   const commonSum = useCalcCommonSum(data);
   const [proccesedData, setProcessedData] = useState([]);
 
@@ -13,7 +14,7 @@ const CirclePieChart = ({ data, width, height, radius, thickness,text }) => {
     setProcessedData(dynamicCalcPieChart(data, radius, commonSum));
   }, [commonSum, data, radius]);
 
-  return (
+  return (  
     <svg
       width={width}
       height={height}
@@ -35,9 +36,12 @@ const CirclePieChart = ({ data, width, height, radius, thickness,text }) => {
       {proccesedData &&
         proccesedData.map(i => (
           <Pie
+            id={i.id}
+            key={i.id}
+            isActive={activeCategory === i.category}
             cx={width / 2}
             cy={height / 2}
-            className="pie-1"
+            className={`pie-${i.id}`}
             color={getColorForCategory[i.category] || '#d6d6d6'}
             radius={radius}
             thickness={thickness}
@@ -49,7 +53,7 @@ const CirclePieChart = ({ data, width, height, radius, thickness,text }) => {
 
       <use xlinkHref="#myMask" />
       <text textAnchor="middle"  x={width / 2} y={height / 2}>{text}</text>
-      <text textAnchor="middle"  x={width / 2} y={(height / 2) + 20}>{commonSum} ₽</text>
+      <text textAnchor="middle"  x={width / 2} y={(height / 2) + 20}>{formatNumber(commonSum)} ₽</text>
     </svg>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Pie = ({
+  id,
   cx,
   cy,
   value,
@@ -10,7 +11,8 @@ const Pie = ({
   className,
   thickness,
   color,
-  mask
+  mask,
+  isActive
 }) => {
   const rotate = `rotate(-90 ${cx} ${cy})`;
   const maxStrokeLength = 2 * 3.14 * radius;
@@ -19,7 +21,7 @@ const Pie = ({
   
   return ( 
     <circle 
-      className={className}
+      className={isActive ? className + ' pie__scale': className}
       r={radius}
       cx={cx}
       cy={cy}
