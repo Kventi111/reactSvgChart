@@ -27,6 +27,9 @@ svg {
 .App {
   display: flex;
   align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .list {
@@ -65,11 +68,12 @@ svg {
   transform: scale(1.05);
 } */
 
-[class^="pie"] {
+[class^='pie'] {
   transition: stroke-width ease-out 450ms;
   cursor: pointer;
 }
-[class^="pie"]:hover {
+
+[class^='pie']:hover {
   stroke-width: 30;
 }
 
@@ -77,16 +81,7 @@ svg {
   stroke-width: 30;
 }
 
-
 .outline {
   fill: red;
   opacity: 1;
 }
-
-/* .path-1 { stroke-dasharray: 0 628.32; stroke-dashoffset: 498; transition-delay: 25ms; }
-.path-2 { stroke-dasharray: 0 628.32; stroke-dashoffset: 490; transition-delay: 50ms; }
-.path-3 { stroke-dasharray: 0 628.32; stroke-dashoffset: 560; transition-delay: 75ms; }
-.path-4 { stroke-dasharray: 0 628.32; stroke-dashoffset: -69; transition-delay: 100ms; }
-.path-5 { stroke-dasharray: 0 628.32; stroke-dashoffset:  10; transition-delay: 125ms; }
-.path-6 { stroke-dasharray: 0 628.32; stroke-dashoffset:  10; transition-delay: 150ms; }
-.path-7 { stroke-dasharray: 0 628.32; stroke-dashoffset:  10; transition-delay: 175ms; } */
